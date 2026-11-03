@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#12100c" />
+  <title>Admin · Lost Planet</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>
+          <span class="brand-kicker">Lost Planet</span>
+          <span class="brand-title">Escalation League</span>
+        </span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Standings</a>
+      <a href="games.html">Games</a>
+      <a href="join.html">Join</a>
+      <a href="play.html">My army</a>
+      <a href="admin.html" aria-current="page">Admin</a>
+    </nav>
+  </header>
+  <main class="page">
+    <h1>Admin</h1>
+    <section id="gate" class="panel">
+      <p class="lede">League organiser sign-in. The password comes from the server environment, and the session stays in an HttpOnly cookie.</p>
+      <form id="login-form">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required autocomplete="current-password" />
+        <button class="btn" type="submit">Log in</button>
+      </form>
+      <div id="login-out"></div>
+    </section>
+    <div id="app" hidden></div>
+    <noscript><p class="alert">This page needs JavaScript.</p></noscript>
+  </main>
+  <footer class="site-footer">Fan-run tracker for the Lost Planet Discord. Not affiliated with Games Workshop.</footer>
+  <script src="js/api.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
