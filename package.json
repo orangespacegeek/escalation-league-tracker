@@ -1,0 +1,13 @@
+{
+  "name": "escalation-league-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lost Planet Escalation League tracker – static UI + JSON API",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.js"
+  }
+}
