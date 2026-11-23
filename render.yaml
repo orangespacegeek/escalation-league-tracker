@@ -1,0 +1,30 @@
+# Lost Planet Escalation League on Render.
+# Applying this blueprint creates one paid web service. Free instances cannot
+# mount a disk, and this app's JSON is wiped on every restart without one.
+# The $7/month web service (0.5 CPU, 512 MB) is plan id 0.5c-512mb on
+# https://render.com/pricing — that is the current id for what used to be
+# called Starter. Disks are $0.25/GB/month, so 1 GB is about $0.25 and the
+# pair is about $7.25/month. Check the pricing page before you turn it on.
+services:
+  - type: web
+    name: escalation-league
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: TRUST_PROXY
+        value: "1"
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: JOIN_CODE
+        sync: false
+    disk:
+      name: league-data
+      mountPath: /var/data
+      sizeGB: 1

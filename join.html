@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#12100c" />
+  <title>Join · Lost Planet</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>
+          <span class="brand-kicker">Lost Planet</span>
+          <span class="brand-title">Escalation League</span>
+        </span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Standings</a>
+      <a href="games.html">Games</a>
+      <a href="join.html" aria-current="page">Join</a>
+      <a href="play.html">My army</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+  <main class="page">
+    <h1>Join the league</h1>
+    <p class="lede">There are no accounts. The league code lets you in. This browser keeps a personal edit token, and you get a recovery code to move that token to another device.</p>
+    <p id="existing-note" class="alert" hidden>This browser already has a player token. Joining creates another player and replaces the token here. Keep the old recovery code if you still need that player.</p>
+    <div id="join-out"></div>
+    <form id="join-form" class="panel">
+      <label for="join_code">League code</label>
+      <input id="join_code" name="join_code" required maxlength="64" autocomplete="off" />
+      <label for="name">Name</label>
+      <input id="name" name="name" required maxlength="60" autocomplete="name" />
+      <label for="faction">Faction</label>
+      <input id="faction" name="faction" required maxlength="80" placeholder="Imperial Fists, Sons of Horus…" />
+      <label for="allegiance">Allegiance</label>
+      <select id="allegiance" name="allegiance" required>
+        <option value="Loyalist">Loyalist</option>
+        <option value="Traitor">Traitor</option>
+      </select>
+      <div class="actions">
+        <button class="btn" type="submit">Join</button>
+      </div>
+    </form>
+    <form id="recover-form" class="panel">
+      <h2>Already joined</h2>
+      <p class="fine">Enter the recovery code from when you joined. This signs out the previous device.</p>
+      <label for="recovery_code">Recovery code</label>
+      <input id="recovery_code" name="recovery_code" required autocomplete="off" spellcheck="false" />
+      <button class="btn" type="submit">Restore my token</button>
+    </form>
+  </main>
+  <footer class="site-footer">Fan-run tracker for the Lost Planet Discord. Not affiliated with Games Workshop.</footer>
+  <script src="js/api.js" defer></script>
+  <script src="js/join.js" defer></script>
+</body>
+</html>
